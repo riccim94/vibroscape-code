@@ -87,7 +87,7 @@ def main(cfg):
 
     model.to('cuda')
 
-    from nemo.collections.nlp.metrics import ClassificationReport
+    from nemo.collections.tts.metrics.classification_report import ClassificationReport
     model.classification_report = ClassificationReport(num_classes=len(labels), dist_sync_on_step=True, mode='all')
 
     if cfg.get('init_from_nemo_model',None) is not None:
